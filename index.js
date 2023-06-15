@@ -1,3 +1,6 @@
+import { createCharacterCard } from "./components/card/card.js";
+// createCharacterCard();
+
 const cardContainer = document.querySelector('[data-js="card-container"]');
 const searchBarContainer = document.querySelector(
   '[data-js="search-bar-container"]'
@@ -12,3 +15,17 @@ const pagination = document.querySelector('[data-js="pagination"]');
 const maxPage = 1;
 const page = 1;
 const searchQuery = "";
+
+//FETCH NIKITA
+
+async function fetchCharacters() {
+  const response = await fetch("https://rickandmortyapi.com/api/character");
+  const result = await response.json();
+  const info = result.info;
+  const characters = result.results;
+  console.log(result);
+  characters.forEach((character) => {
+    createCharacterCard(character);
+  });
+}
+fetchCharacters();
