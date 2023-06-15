@@ -18,14 +18,27 @@ const searchQuery = "";
 
 //FETCH NIKITA
 
+// async function fetchCharacters() {
+//   const response = await fetch("https://rickandmortyapi.com/api/character");
+//   const result = await response.json();
+//   const info = result.info;
+//   const characters = result.results;
+//   console.log(result);
+//   characters.forEach((character) => {
+//     createCharacterCard(character);
+//   });
+// }
+// fetchCharacters();
+
 async function fetchCharacters() {
   const response = await fetch("https://rickandmortyapi.com/api/character");
-  const result = await response.json();
-  const info = result.info;
-  const characters = result.results;
-  console.log(result);
-  characters.forEach((character) => {
-    createCharacterCard(character);
-  });
+  console.log(response);
+  const data = await response.json();
+  console.log(data);
+  const characters = data.results;
+  console.log(characters);
+  // console.log("characters", characters);
+  characters.forEach((character) => {});
+  createCharacterCard(character);
 }
 fetchCharacters();
