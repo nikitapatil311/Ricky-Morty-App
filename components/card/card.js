@@ -6,6 +6,7 @@ export function createCharacterCard(characters) {
 
   // Generate the HTML code for the card
   newCard.innerHTML = `
+
     <li class="card">
     <div class="card__image-container">
     <img class="card__image" src="${characters.image}" alt="${characters.name}" />
@@ -24,6 +25,7 @@ export function createCharacterCard(characters) {
     </div>
     </li>
     `;
+
 
   ul.append(newCard);
 }
