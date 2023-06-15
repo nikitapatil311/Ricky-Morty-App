@@ -32,13 +32,13 @@ const searchQuery = "";
 
 async function fetchCharacters() {
   const response = await fetch("https://rickandmortyapi.com/api/character");
-  console.log(response);
+  // console.log(response);
   const data = await response.json();
-  console.log(data);
+  // console.log(data);
   const characters = data.results;
-  console.log(characters);
-  // console.log("characters", characters);
-  characters.forEach((character) => {});
-  createCharacterCard(character);
+  // console.log(characters);
+  characters.forEach((character) => {
+    createCharacterCard(character);
+  });
 }
 fetchCharacters();
