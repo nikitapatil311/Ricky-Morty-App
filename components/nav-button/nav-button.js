@@ -16,7 +16,7 @@ export function createButton() {
 
   nextButton.addEventListener("click", (e) => {
     e.preventDefault();
-    if (variables.page <= variables.maxPage) {
+    if (variables.page < variables.maxPage) {
       variables.page++;
       fetchCharacters(variables.page, variables.searchQuery);
       createPagination(variables.page, variables.maxPage);
