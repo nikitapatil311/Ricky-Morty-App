@@ -18,6 +18,7 @@ export const variables = {
 };
 
 export async function fetchCharacters(page = 1, searchQuery) {
+
   cardContainer.textContent = "";
   const response = await fetch(
     `https://rickandmortyapi.com/api/character?page=${page}&name=${searchQuery}`
